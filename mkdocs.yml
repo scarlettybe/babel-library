@@ -1,0 +1,16 @@
+site_name: Babel Library
+theme:
+  name: material
+  language: en
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Library Essentials: essentials.md
+  - Reading & Booklists: booklists.md
+  - Programs & Community: programs.md
+  - How-to Guides: guides.md
+  - Academic ↔ Public: bridge.md
+  - Metrics: metrics.md
