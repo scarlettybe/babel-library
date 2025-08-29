@@ -1,16 +1,22 @@
 site_name: Babel Library
-theme:
-  name: material
-  language: en
-
-plugins:
-  - search
+site_url: https://scarlettybe.github.io/babel-library/
 
 nav:
-  - Home: index.md
-  - Library Essentials: essentials.md
-  - Reading & Booklists: booklists.md
-  - Programs & Community: programs.md
-  - How-to Guides: guides.md
-  - Academic ↔ Public: bridge.md
-  - Metrics: metrics.md
+  - 首页 Home: index.md
+  - 阅读书籍 Reading as Art:
+      - 总览 Overview: reading/index.md
+      - 书单 Booklists: reading/booklists.md
+      - 书评 Reviews: reading/reviews/index.md
+      - 投稿 Submit: submit.md
+  - 他者空间 Toward the Other:
+      - 精选 Highlights: space/index.md
+      - 日历 Calendar: space/calendar.md
+      - 活动 LCP: space/lcp-journal.md
+      - 加入 Join: join.md
+  - 祛魅书籍 Disenchanting the Book:
+      - 总览 Overview: disenchant/index.md
+      - 阅读史 Reading History: disenchant/pathways/reading-history.md
+      - 指示手 Manicule: disenchant/pathways/manicule.md
+      - 方法 Methods: disenchant/methods.md
+      - 书目 Bibliography: disenchant/bibliography.md
+  #- 数据看板 Metrics: metrics.md

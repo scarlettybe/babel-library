@@ -1,0 +1,3 @@
+# 方法与术语 · Methods & Terms
+- marginalia（边注）｜paratext（副文本）｜reception（接受研究）…
+- 1–2 句白话解释 + 参考链接（开放资源优先）
