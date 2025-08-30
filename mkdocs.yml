@@ -20,3 +20,6 @@ nav:
       - 方法 Methods: disenchant/methods.md
       - 书目 Bibliography: disenchant/bibliography.md
   #- 数据看板 Metrics: metrics.md
+  
+extra_css:
+  - assets/extra.css

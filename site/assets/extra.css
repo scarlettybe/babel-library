@@ -1,0 +1,99 @@
+/* ====== Homepage Banner (Hero) — content width ====== */
+.bl-hero{
+  position: relative;
+  width: 100%;                      /* 不再用 100vw */
+  min-height: 320px;                /* 高度自己调：280–420 都可 */
+  border-radius: 14px;
+  overflow: hidden;
+  background: url('hero.jpg') center/cover no-repeat;  /* 图片与 extra.css 同目录 */
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+  margin: 8px 0 18px;               /* 与正文留一点间距 */
+}
+/* 如果图片中心太亮/太花，可稍微下移或上移构图 */
+.bl-hero{ background-position: 50% 40%; }
+
+/* 文字与蒙层 */
+.bl-hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.22));
+}
+.bl-hero__inner{
+  position: relative; z-index: 1;
+  max-width: 1000px; margin: 0 auto; padding: 48px 24px;
+  color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,.35);
+}
+.bl-hero__inner h1{ margin: 0 0 .4rem; font-weight: 800; }
+.bl-hero__inner p{ margin: 0 0 1rem; font-size: 1.06rem; }
+
+/* 小按钮（复用） */
+a.bl-btn{
+  display:inline-block; padding:8px 12px; border-radius:10px;
+  background:#6a4cff; color:#fff !important; text-decoration:none;
+}
+a.bl-btn:hover{ filter:brightness(.95); }
+
+/* 移动端：稍矮一点，避免挡住内容 */
+@media (max-width: 640px){
+  .bl-hero{ min-height: 240px; }
+}
+
+
+
+
+
+
+/* ===== Top bar: black & white for mkdocs default theme ===== */
+.navbar,
+.navbar.navbar-inverse,
+.navbar-fixed-top,
+.navbar-static-top {
+  background: #111 !important;
+  background-image: none !important; /* 去掉蓝色渐变 */
+  border-bottom: 1px solid #222 !important;
+}
+
+/* 顶栏文字与链接 */
+.navbar .navbar-brand,
+.navbar .navbar-text,
+.navbar .navbar-nav > li > a {
+  color: #fff !important;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-nav > li > a:hover,
+.navbar .navbar-nav > li > a:focus {
+  color: #e6e6e6 !important;
+  background: transparent !important;
+}
+
+/* 下拉菜单（导航项右侧的小三角与菜单） */
+.navbar .navbar-nav > li > a .caret {
+  border-top-color: #fff !important;
+  border-bottom-color: #fff !important;
+}
+.dropdown-menu {
+  background: #111 !important;
+  border: 1px solid #222 !important;
+}
+.dropdown-menu > li > a {
+  color: #eee !important;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #fff !important;
+  background: #222 !important;
+}
+
+/* 搜索/图标（Font Awesome / SVG） */
+.navbar .fa,
+.navbar .glyphicon,
+.navbar svg {
+  color: #fff !important;
+  fill: #fff !important;
+  opacity: .95;
+}
+
+/* 移动端折叠按钮 */
+.navbar .navbar-toggle .icon-bar {
+  background-color: #fff !important;
+}
