@@ -97,3 +97,101 @@ a.bl-btn:hover{ filter:brightness(.95); }
 .navbar .navbar-toggle .icon-bar {
   background-color: #fff !important;
 }
+
+
+
+.bl-hero{ position:relative; }
+.bl-hero::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,.10) 35%, rgba(0,0,0,.28));
+  pointer-events:none; border-radius:18px;
+}
+.bl-hero__inner h1{ text-shadow:0 2px 12px rgba(0,0,0,.35); }
+.bl-hero__inner p{ text-shadow:0 1px 8px rgba(0,0,0,.30); }
+
+
+
+/* 仅在默认主题（Bootstrap）下：为左侧 “阅读书籍” 链接之后加图 */
+.bs-sidebar .nav > li.active > a[href*="/reading/"]{
+  position: relative;
+  display: block;
+}
+.bs-sidebar .nav > li.active > a[href*="/reading/"]::after{
+  content: "";
+  display: block;
+  height: 220px;
+  margin-top: 12px;
+  border-radius: 12px;
+  background: url("../img/reading-as-art.jpg") center / cover no-repeat;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+@media (max-width: 991px){
+  .bs-sidebar .nav > li.active > a[href*="/reading/"]::after{ display: none; }
+}
+
+
+
+
+/* ===== Bio card：左侧肖像 + 中英独白（首页） ===== */
+.bl-bio{
+  width: 280px;                 /* 卡片宽度 */
+  margin-left: -320px;          /* 关键：把卡片“拉”进左侧空白区 */
+  float: left;                  /* 正文从右侧环绕 */
+  margin-right: 24px;           /* 与正文间距 */
+}
+.bl-bio__inner{
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(2px);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.06);
+}
+.bl-bio__img{
+  display: block;
+  width: 100%;
+  height: 160px;                /* 固定可控的可视区 */
+  object-fit: cover;            /* 充满裁切 */
+  transform-origin: center;
+  animation: bl-kenburns 18s ease-in-out infinite; /* JPG 也能做轻微“呼吸感” */
+}
+@keyframes bl-kenburns{
+  0%,100%{ transform: scale(1) translateY(0); }
+  50%{    transform: scale(1.05) translateY(-2px); }
+}
+.bl-bio__copy{
+  padding: 12px 14px;
+  line-height: 1.55;
+  font-size: .95rem;
+}
+.bl-bio__copy .en{
+  margin-top: 8px;
+  opacity: .85;
+  font-size: .9rem;
+}
+
+/* 小屏时回到正文顶部、占满宽度 */
+@media (max-width: 1200px){
+  .bl-bio{ margin-left: 0; float: none; width: auto; }
+  .bl-bio__img{ height: 140px; }
+}
+@media (max-width: 768px){
+  .bl-bio__img{ height: 120px; }
+}
+
+
+/* 紧一点的横幅间距（可选） */
+.bl-hero{ margin-top: 0; }
+
+/* 左侧个人卡片：往上提并置顶 */
+.bl-bio{
+  margin-top: -300px;   /* 先试 -260，根据屏幕再微调：-220 ~ -300 */
+  position: relative;
+  z-index: 5;           /* 保证不被后面的元素压住 */
+  box-shadow: 0 10px 28px rgba(0,0,0,.12); /* 视觉更稳，可选 */
+}
+
+/* 小屏回落为普通流式，不要上提 */
+@media (max-width: 1200px){
+  .bl-bio{ margin-top: 12px; }
+}
